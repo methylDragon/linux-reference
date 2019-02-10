@@ -207,6 +207,49 @@ Try to avoid using ~/, since that tends to fail, instead, write the full directo
 cd /directory
 ```
 
+Either that, or, in the crontab
+
+```shell
+* * * * * cd /your_directory && <run your command>
+```
+
+
+
+### Consecutive Commands in crontab
+
+Suppose you have a crontab that looks like this
+
+```shell
+25 * * * * * cd ~/Desktop && touch HI_1
+26 * * * * * touch HI_2
+```
+
+HI_2 will be created in the home directory even though the prior command had a change of directory! This is because each line in the crontab is run in its own shell starting at the home directory!
+
+
+
+### Looping Commands
+
+Suppose you have a script that runs indefinitely, can cron run a command? If you read the previous section, you know cron just starts each command in a new shell, so of course you can.
+
+```shell
+25 * * * * * python3 script_with_while_true_indefinite.py
+26 * * * * * python3 some_other_script.py # THIS STILL CAN RUN!
+```
+
+
+
+### Killing Processes in Crontab
+
+Just use pkill! If you're running a script file, you can use the `-f` option.
+
+So for example... this set up will cause the looping script to be killed and then restarted daily!
+
+```shell
+0 12 * * * * pkill -f some_looping_file.py
+1 12 * * * * python3 some_looping_file.py
+```
+
 
 
 ### Run sudo Commands
@@ -232,8 +275,6 @@ echo <password> | sudo <command>
 # Add to the end of your command
 * * * * * <command> > /log/file/directory/logfile_name.log
 ```
-
-
 
 
 
