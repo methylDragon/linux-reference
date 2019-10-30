@@ -1,6 +1,6 @@
 # Linux Basics
 
-Author: methylDragon  
+Author: methylDragon, batuhantaysi 
 Exactly what you think it means!    
 
 ------
@@ -27,7 +27,7 @@ Here's a list of useful commands!
 
 ```shell
 # Get help
-$ man
+$ man #As the first command, use 'man man'!
 
 # Superuser
 $ sudo
@@ -44,6 +44,8 @@ $ touch
 $ less
 $ mv
 $ rm
+$ mkdir
+$ rmdir
 $ cp
 
 # More commands
@@ -130,6 +132,7 @@ $ service <service_name> stop
 $ systemctl status <service_name>
 $ systemctl start <service_name>
 $ systemctl stop <service_name>
+$ systemctl reload <service_name>
 ```
 
 
@@ -171,6 +174,8 @@ $ lsof -i
 $ ps aux
 $ ps aux | grep <specific_process>
 
+$ ps axjf
+
 $ top
 $ htop
 ```
@@ -184,6 +189,8 @@ $ mount # Check mounts
 $ cat /etc/fstab # Check mounts
 
 $ mount /dev/<device_dir> /mnt
+
+$ umount /mnt # Unmount the device
 ```
 
 
