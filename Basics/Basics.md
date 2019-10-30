@@ -1,9 +1,15 @@
 # Linux Basics
 
-Author: methylDragon, batuhantaysi 
+Author: methylDragon    
 Exactly what you think it means!    
 
 ------
+
+## Extra Contributors
+
+- batuhantaysi 
+
+
 
 ## Introduction
 
@@ -27,7 +33,7 @@ Here's a list of useful commands!
 
 ```shell
 # Get help
-$ man #As the first command, use 'man man'!
+$ man
 
 # Superuser
 $ sudo
@@ -44,9 +50,11 @@ $ touch
 $ less
 $ mv
 $ rm
+$ cp
+
+# Folder Commands
 $ mkdir
 $ rmdir
-$ cp
 
 # More commands
 $ watch
@@ -81,7 +89,6 @@ $ grep
 
 ```shell
 $ uname -a # All
-
 $ uname -v # Version only
 ```
 
@@ -174,7 +181,7 @@ $ lsof -i
 $ ps aux
 $ ps aux | grep <specific_process>
 
-$ ps axjf
+$ ps axjf # Check processes in hierarchy form
 
 $ top
 $ htop
@@ -189,21 +196,16 @@ $ mount # Check mounts
 $ cat /etc/fstab # Check mounts
 
 $ mount /dev/<device_dir> /mnt
-
 $ umount /mnt # Unmount the device
 ```
-
-
 
 
 
 ```
                             .     .
                          .  |\-^-/|  .    
-                        /| } O.=.O { |\
+                        /| } O.=.O { |\    
 ```
-
-​    
 
 ------
 
